@@ -1,14 +1,12 @@
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
 import type { ReactNode } from 'react';
 
-
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
+import {theme} from '../theme/default.js';
 
-const theme = createTheme({
-  /** Put your mantine theme override here */
-});
 
 type RootLayoutProps = { children: ReactNode };
 

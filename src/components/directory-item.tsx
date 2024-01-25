@@ -1,7 +1,7 @@
 'use client';
-export const DirectoryItem = ({switchDirectory,item}) => {
+export const DirectoryItem = ({item}) => {
     return (
-      <li onClick={()=>switchDirectory(item)}>
+      <li >
         {item}
       </li>
     );
