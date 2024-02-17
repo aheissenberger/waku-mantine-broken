@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { DateInput } from '@mantine/dates';
 
 export const DateInputDemo = () => {
-console.log('DateInputDemo')
+//console.log('DateInputDemo')
   const [value, setValue] = useState<Date | null>(null);
   //return 'DateInputDemo';
-  debugger
+
   return (
     <DateInput
       value={value}

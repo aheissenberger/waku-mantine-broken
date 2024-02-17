@@ -1,8 +1,8 @@
 import { Link } from 'waku';
 
 import { Counter } from '../components/counter.js';
-import { Button, TextInput } from '@mantine/core';
-import { MantineTestComponet } from '../components/MantineTestComponet.js';
+import { NavLeft } from '../components/NavLeft.js';
+
 export const HomePage = async () => {
   const data = await getData();
 
@@ -11,21 +11,12 @@ export const HomePage = async () => {
       <title>{data.title}</title>
       <h1 className="text-4xl font-bold tracking-tight">{data.headline}</h1>
       <p>{data.body}</p>
-      <Counter />
-      <Button variant="filled">Button</Button>
-      <TextInput
-      label="Input label"
-      description="Input description"
-      placeholder="Input placeholder"
-    />
 
-{/* Error: @mantine/core: MantineProvider was not found in component tree, make sure you have it in your app */}
-    <MantineTestComponet/>
-
-
-
-      {/* <DateInputDemo/> */}
       <ul>
+      <li><Link to="/mantine" className="mt-4 inline-block underline">
+        Mantine
+      </Link></li>
+      <li><NavLeft /></li>
       <li><Link to="/about" className="mt-4 inline-block underline">
         About
       </Link></li>

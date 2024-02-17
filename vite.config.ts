@@ -1,11 +1,23 @@
 import { defineConfig } from 'vite';
-//import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 export default defineConfig(({ mode }) => ({
-  ...(mode === 'development' && {
+  ...({
+    optimizeDeps: {
+      include: [
+        'dayjs', 'dayjs/**/*', // @mantine/dates
+        '@mantine/charts > lodash/**/*', // @mantine/charts
+        '@mantine/code-highlight > highlight.js', // @mantine/code-highlight
+        '@mantine/notifications > prop-types', // @mantine/notifications
+      ],
+      esbuildOptions: {
+        preserveSymlinks: true,
+      },
+      exclude: ['@mantine/core', '@mantine/hooks', '@mantine/code-highlight', '@mantine/charts', '@mantine/spotlight', '@mantine/notifications','@mantine/carousel','@mantine/dropzone','@mantine/nprogress','@mantine/tiptap'],
+    },
     ssr: {
-      external: ['@mantine/core','@mantine/dates','@mantine/hooks'],
+      noExternal: ['@mantine/core', '@mantine/hooks', '@mantine/code-highlight', '@mantine/charts', '@mantine/spotlight', '@mantine/notifications','@mantine/carousel','@mantine/dropzone','@mantine/nprogress','@mantine/tiptap'],
     },
   }),
-  //plugins: [vanillaExtractPlugin({ emitCssInSsr: true }), stylexPlugin()],
+  plugins: [],
 }));
+

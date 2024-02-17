@@ -1,0 +1,31 @@
+import '@mantine/charts/styles.css';
+import { Title } from '@mantine/core';
+import { ChartsDemo } from '../components/ChartsDemo';
+import { ClientOnly } from '../components/ClientOnly';
+
+export const MantineChartsPage = async () => {
+  const data = await getData();
+
+  return (
+    <div>
+      <title>{data.title}</title>
+      <Title order={1}>{data.title}</Title>
+      <h1 className="text-4xl font-bold tracking-tight">{data.headline}</h1>
+      <p>{data.body}</p>
+      <ClientOnly><ChartsDemo /></ClientOnly>
+    </div>
+  );
+};
+
+
+
+
+const getData = async () => {
+  const data = {
+    title: 'Mantine Charts Page',
+    headline: 'Mantine Charts Page',
+    body: 'Hello world!',
+  };
+
+  return data;
+};

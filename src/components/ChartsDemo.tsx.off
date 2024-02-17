@@ -1,0 +1,17 @@
+
+import { AreaChart } from '@mantine/charts';
+import { data as data_areachart } from '../data/areachart';
+
+export function ChartsDemo(){
+    return(<AreaChart
+        h={300}
+        data={data_areachart}
+        dataKey="date"
+        series={[
+          { name: 'Apples', color: 'indigo.6' },
+          { name: 'Oranges', color: 'blue.6' },
+          { name: 'Tomatoes', color: 'teal.6' },
+        ]}
+        curveType="linear"
+      />)
+}
