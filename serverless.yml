@@ -19,10 +19,12 @@ plugins:
 package:
   patterns:
     - "!**/**"
-    - "dist/*"
-    - "dist/ssr/**"
-    - "dist/assets/**"
-    - "dist/public/**"
+    - "dist/**"
+    # - "dist/ssr/**"
+    # - "dist/templates/**"
+    # - "dist/assets/**"
+    # - "dist/public/**"
+    - "!dist/public/assets/**"
     - "!dist/public/images/**"
     #- "!dist/public/assets/**"
 
@@ -46,13 +48,8 @@ custom:
       deleteRemoved: true
       acl: public-read # required
       params:
-        - "assets/pwa/sw.js":
-            CacheControl: 'no-cache'
-            #ServiceWorkerAllowed: '/'
-        - "assets/pwa/manifest.webmanifest":
-            CacheControl: 'no-cache'
-        - "*.*":
-            CacheControl: 'public, max-age=31536000'
+        - "assets/**":
+            CacheControl: 'public, max-age=31536000, immutable'
   cloudfrontInvalidate:
     - distributionIdKey: 'FrontendCloudFrontDistributionId'
       autoInvalidate: true
