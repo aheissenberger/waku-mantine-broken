@@ -3,7 +3,6 @@ import { CodeHighlightDemo } from '../components/CodeHighlightDemo';
 import { NotificationsSystemDemo } from '../components/NotificationsSystemDemo';
 import { SpotlightDemo } from '../components/SpotlightDemo';
 import { CarouselDemo } from '../components/CarouselDemo';
-import { ClientOnly } from '../components/ClientOnly';
 import { DropzoneDemo } from '../components/DropzoneDemo';
 import { NavigationProgressDemo } from '../components/NavigationProgressDemo';
 import { ModalManagerDemo } from '../components/ModalsManagerDemo';

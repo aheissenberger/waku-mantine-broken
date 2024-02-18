@@ -1,12 +1,5 @@
-
-
-
-
-import { AspectRatio, Autocomplete, Box, Button, Center, ColorPicker, Container, CopyButton, MantineProvider, MultiSelect, TextInput, Title } from '@mantine/core';
-import { MantineTestComponet } from '../components/MantineTestComponet.js';
-import { DateInputDemo } from '../components/DateInputDemo.js';
-import { DateInput } from '@mantine/dates';
-
+import { AspectRatio, Box, Center, Container, Title } from '@mantine/core';
+import SampleImage from '../assets/sample.jpg';
 
 export const MantineCorePage = async () => {
   const data = await getData();
@@ -24,7 +17,7 @@ export const MantineCorePage = async () => {
         <Title order={3}>AspectRatio</Title>
         <AspectRatio ratio={1080 / 720} maw={300} mx="auto">
       <img
-        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-5.png"
+        src={SampleImage}
         alt="Panda"
       />
     </AspectRatio>
